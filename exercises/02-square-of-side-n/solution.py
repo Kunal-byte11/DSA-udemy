@@ -8,26 +8,23 @@ Return a square pattern of size n x n made up of '*', represented as a list of s
 from typing import List
 
 
-def generate_square_loop(n: int) -> List[str]:
-    """
-    Approach 1: Using a standard for-loop.
-    Easy to read and understand step-by-step.
-    """
-    result = []
-    for _ in range(n):
-        # In Python, '*' * n repeats the character n times
-        row = '*' * n
-        result.append(row)
-    return result
-
-
 def generate_square(n: int) -> List[str]:
     """
-    Approach 2: Pythonic one-liner using List Comprehension.
+    Kunal's Solution: Iterative loop building rows of '*'
     Time Complexity: O(n^2)
     Space Complexity: O(n^2)
     """
-    return ['*' * n for _ in range(n)]
+    lst = []
+    for i in range(n):
+        lst.append("*" * n)
+    return lst
+
+
+def generate_square_comprehension(n: int) -> List[str]:
+    """
+    Alternative: One-liner using Python list comprehension
+    """
+    return ["*" * n for _ in range(n)]
 
 
 if __name__ == "__main__":
